@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 #
 
 $(call inherit-product, vendor/xiaomi/nitrogen/nitrogen-vendor.mk)
-	
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -318,10 +318,6 @@ PRODUCT_PACKAGES += \
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_whyred
 
 # RIL
 PRODUCT_PACKAGES += \

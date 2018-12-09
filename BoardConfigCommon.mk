@@ -190,9 +190,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/recovery.fstab
-
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_nitrogen
 TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
