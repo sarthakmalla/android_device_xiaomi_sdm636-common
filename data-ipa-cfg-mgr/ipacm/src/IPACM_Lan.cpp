@@ -2297,8 +2297,8 @@ int IPACM_Lan::handle_eth_client_route_rule(uint8_t *mac_addr, ipa_ip_type iptyp
 				strlcpy(rt_rule->rt_tbl_name,
 								IPACM_Iface::ipacmcfg->rt_tbl_lan_v4.name,
 								sizeof(rt_rule->rt_tbl_name));
-				rt_rule->rt_tbl_name[IPA_RESOURCE_NAME_MAX-1] = '\0';
-			    rt_rule_entry->rule.dst = tx_prop->tx[tx_index].dst_pipe;
+			    rt_rule->rt_tbl_name[IPA_RESOURCE_NAME_MAX-1] = '\0';
+                            rt_rule_entry->rule.dst = tx_prop->tx[tx_index].dst_pipe;
 			    memcpy(&rt_rule_entry->rule.attrib,
 						 &tx_prop->tx[tx_index].attrib,
 						 sizeof(rt_rule_entry->rule.attrib));
@@ -5761,7 +5761,6 @@ int IPACM_Lan::add_tcp_syn_flt_rule(ipa_ip_type iptype)
 
 	memcpy(&flt_rule_entry.rule.attrib, &rx_prop->rx[0].attrib,
 		sizeof(flt_rule_entry.rule.attrib));
-	flt_rule_entry.rule.attrib.attrib_mask |= IPA_FLT_TCP_SYN;
 	if(iptype == IPA_IP_v4)
 	{
 		flt_rule_entry.rule.attrib.attrib_mask |= IPA_FLT_PROTOCOL;
@@ -5824,7 +5823,6 @@ int IPACM_Lan::add_tcp_syn_flt_rule_l2tp(ipa_ip_type inner_ip_type)
 
 	memcpy(&flt_rule_entry.rule.attrib, &rx_prop->rx[0].attrib,
 		sizeof(flt_rule_entry.rule.attrib));
-	flt_rule_entry.rule.attrib.attrib_mask |= IPA_FLT_TCP_SYN_L2TP;
 	if(inner_ip_type == IPA_IP_v4)
 	{
 		flt_rule_entry.rule.attrib.ether_type = 0x0800;
