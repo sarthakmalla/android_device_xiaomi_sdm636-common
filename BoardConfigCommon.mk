@@ -21,7 +21,7 @@
 # definition file).
 #
 
-VENDOR_PATH := device/xiaomi/sdm636
+VENDOR_PATH := device/xiaomi/sdm636-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
